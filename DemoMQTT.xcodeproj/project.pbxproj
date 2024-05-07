@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01F609385545DF53C6ED1EEE /* Pods_DemoMQTT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CC5488E83684C3996FD0D2E /* Pods_DemoMQTT.framework */; };
 		F8D12AB32BEA30DC00A27E24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D12AB22BEA30DC00A27E24 /* AppDelegate.swift */; };
 		F8D12AB52BEA30DC00A27E24 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D12AB42BEA30DC00A27E24 /* SceneDelegate.swift */; };
 		F8D12AB72BEA30DC00A27E24 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D12AB62BEA30DC00A27E24 /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1CC5488E83684C3996FD0D2E /* Pods_DemoMQTT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoMQTT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5431ACFC5049BDB2F9EC78F9 /* Pods-DemoMQTT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoMQTT.release.xcconfig"; path = "Target Support Files/Pods-DemoMQTT/Pods-DemoMQTT.release.xcconfig"; sourceTree = "<group>"; };
+		DD52E02BEEB11B7435C5B3C9 /* Pods-DemoMQTT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoMQTT.debug.xcconfig"; path = "Target Support Files/Pods-DemoMQTT/Pods-DemoMQTT.debug.xcconfig"; sourceTree = "<group>"; };
 		F8D12AAF2BEA30DC00A27E24 /* DemoMQTT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoMQTT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8D12AB22BEA30DC00A27E24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8D12AB42BEA30DC00A27E24 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01F609385545DF53C6ED1EEE /* Pods_DemoMQTT.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		321D21468FF4786F4CCAF597 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1CC5488E83684C3996FD0D2E /* Pods_DemoMQTT.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D9AE5A68ADADA60816A42980 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DD52E02BEEB11B7435C5B3C9 /* Pods-DemoMQTT.debug.xcconfig */,
+				5431ACFC5049BDB2F9EC78F9 /* Pods-DemoMQTT.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F8D12AA62BEA30DC00A27E24 = {
 			isa = PBXGroup;
 			children = (
 				F8D12AB12BEA30DC00A27E24 /* DemoMQTT */,
 				F8D12AB02BEA30DC00A27E24 /* Products */,
+				D9AE5A68ADADA60816A42980 /* Pods */,
+				321D21468FF4786F4CCAF597 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F8D12AC32BEA30FB00A27E24 /* Build configuration list for PBXNativeTarget "DemoMQTT" */;
 			buildPhases = (
+				1D0A51FE8DF28625CEBFE67B /* [CP] Check Pods Manifest.lock */,
 				F8D12AAB2BEA30DC00A27E24 /* Sources */,
 				F8D12AAC2BEA30DC00A27E24 /* Frameworks */,
 				F8D12AAD2BEA30DC00A27E24 /* Resources */,
+				5C227ADD46C2ED54D7BE1B9A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1D0A51FE8DF28625CEBFE67B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DemoMQTT-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5C227ADD46C2ED54D7BE1B9A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DemoMQTT/Pods-DemoMQTT-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DemoMQTT/Pods-DemoMQTT-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DemoMQTT/Pods-DemoMQTT-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F8D12AAB2BEA30DC00A27E24 /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		F8D12AC42BEA30FB00A27E24 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD52E02BEEB11B7435C5B3C9 /* Pods-DemoMQTT.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -309,6 +379,7 @@
 		};
 		F8D12AC52BEA30FB00A27E24 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5431ACFC5049BDB2F9EC78F9 /* Pods-DemoMQTT.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
