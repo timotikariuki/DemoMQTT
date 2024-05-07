@@ -10,18 +10,19 @@ import CocoaMQTT
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var lblMessage: UILabel!
     // Initialize MQTT client with provided details.
     var mqtt = CocoaMQTT(
         clientID: "iOS Device",
-        host: "mqtt.example.com",
+        host: "tcp://services.chakraview.co.in",
         port: 1883)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Initialize MQTT client
-        mqtt.username = "your_username"
-        mqtt.password = "your_password"
+        mqtt.username = "mqtt-test"
+        mqtt.password = "mqtt-test"
         mqtt.keepAlive = 60
         
         // Set the delegate to receive MQTT events
@@ -58,7 +59,7 @@ extension ViewController: CocoaMQTTDelegate {
         print("Connected to MQTT broker with ack: \(ack)")
         
         // Subscribe to a topic
-        mqtt.subscribe("your_topic")
+        mqtt.subscribe("liveroute/1451110")
     }
     
     func mqtt(_ mqtt: CocoaMQTT, didPublishMessage message: CocoaMQTTMessage, id: UInt16) {
@@ -69,7 +70,7 @@ extension ViewController: CocoaMQTTDelegate {
         print("Received message: \(message.string ?? "")")
         
         // Handle received message
-        // You can update your UI here with the received message
+        self.lblMessage.text = message.string ?? ""
     }
     
     func mqtt(_ mqtt: CocoaMQTT, didSubscribeTopic topic: String) {
