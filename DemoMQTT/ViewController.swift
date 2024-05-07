@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     // Initialize MQTT client with provided details.
     var mqtt = CocoaMQTT(
         clientID: "iOS Device",
-        host: "tcp://services.chakraview.co.in",
+        host: "services.chakraview.co.in",
         port: 1883)
     
     override func viewDidLoad() {
@@ -59,7 +59,7 @@ extension ViewController: CocoaMQTTDelegate {
         print("Connected to MQTT broker with ack: \(ack)")
         
         // Subscribe to a topic
-        mqtt.subscribe("liveroute/1451110")
+        mqtt.subscribe("liveroute/1454540")
     }
     
     func mqtt(_ mqtt: CocoaMQTT, didPublishMessage message: CocoaMQTTMessage, id: UInt16) {
